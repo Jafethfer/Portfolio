@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="./assets/css/style.css">
+        <link rel="stylesheet" href="./assets/css/scroll-fade.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body> 
+        <audio loop id="bg-music">
+            <source id="bg-music-src" src="./assets/sfx/geese-stage-ost.mp3" type="audio/mp3">
+        </audio>
+        <div class="container" id="main-container">
+            <div class="layer front-layer">
+                <div id="video-opening">
+                    <img id="gif-opening" src="./assets/img/geese-stage-op.gif">
+                </div>
+                <img id="stage-background" class="gif-stage" src="./assets/img/Geese-stage.gif">
+                <div id="geese-animation" class="geese-idle"></div>
+                <div id="terry-animation" class="terry-idle"></div>
+                <div id="kim-animation" class="kim-idle"></div>
+            </div>
+            <div class="controls-layer">
+                <div id="button-circle">
+                    <button type="button" onclick="play_stop()" id="button_music">
+                        <i class="fa fa-volume-off inactive" id="volume-off-icon" aria-hidden="true"></i>
+                        <i class="fa fa-volume-up active" id="volume-on-icon" aria-hidden="true"></i>     
+                    </button>
+                </div>
+            </div>
+            <div class="info-layer" id="info-layer-id">
+                <div id="info-layer-container-id" class="info-layer-container">
+                    <div id="title">
+                        ¡Bienvenido! <br>
+                        Presiona el botón para iniciar el portafolio.
+                        <div class="separador" style="width: 50%;"></div>
+                        <i class="fa fa-chevron-down" aria-hidden="true"></i><br>
+                        <button id="start-btn" type="button" onclick="startPortfolio()" class="blink">Start</button>
+                        <p style="font-size:30px;width:50%;text-align: center; margin: auto;">Este portafolio contiene musica y sonidos para mejor inmersion.
+                        Si deseas continuar sin musica y sonidos puedes dar clic al boton de sonido
+                        en la esquina superior derecha.</p>
+                    </div>
+                    <div class="section scrollFade" id="section-2">
+                        <p style="text-align: center;">¡Bienvenidos a mi portafolio interactivo!</p><br>
+                        <div class="inner-section">
+                            <div class="column" style="border-right: 2px solid red;">
+                                <img id="profile-image" src="./assets/img/my-img.png">
+                            </div>
+                            <div class="column" style="justify-content: center;">
+                                Brando Jaffeth Fernandez Serrano<br>
+                                Edad: 22<br>
+                                Carrera: Ingenieria en Sistemas<br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="section scrollFade" id="section-3">
+                        <p style="text-align: center;">Un poco sobre mi</p><br>
+                        <div class="inner-section">
+                            <div class="column" style="border-right: 2px solid red;font-size: 2.5vw;">
+                                Soy originario de La Ceiba, Honduras. Desde pequeño he sentido gran atracción por 
+                                la programación y computación, desde los juegos arcade hasta los sistemas distribuidos 
+                                más grandes mi curiosidad y amor por las computadoras ha sido el mismo.<br>
+
+                                Mi motivación por aprender siempre algo nuevo es lo que me ha llevado a ser el desarrollador
+                                que soy hoy en día.
+                            </div>
+                            <div class="column" style="font-size: 2.5vw; justify-content: center;">
+                                Como podrán saber a partir del tema que he elegido para mi portafolio web, los juegos son una 
+                                fracción de lo que he deseado como ingeniero en sistemas, sin embargo, a medida aprendí más sobre 
+                                mi carrera, he podido expandir mis conocimientos en desarrollo web.
+                            </div>
+                        </div>
+                        <button id="buttonToPage3" type="button" onclick="displayPage3()" class="blink next-btn">Siguiente</button>
+                    </div>
+                    <div class="section" id="section-4">
+                        <p style="text-align: center;">Servicios</p><br>
+                        <div class="inner-section scrollFade">
+                            <div class="column" style="border-right: 2px solid red;font-size: 2.5vw;">
+                                Diseño web<br>
+                                <div class="separador" style="width: 20%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/web-design-icon.jpg">
+                            </div>
+                            <div class="column" style="font-size: 2.5vw;">
+                                Bases de Datos<br>
+                                <div class="separador" style="width: 37%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/db-icon.png">
+                            </div>
+                        </div>
+                        <div class="inner-section scrollFade">
+                            <div class="column" style="border-right: 2px solid red;font-size: 2.5vw;">
+                                RESTful APIs<br>
+                                <div class="separador" style="width: 20%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/rest-api.png">
+                            </div>
+                            <div class="column" style="font-size: 2.5vw;">
+                                Programación de aplicaciones<br>
+                                <div class="separador" style="width: 37%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/programming-icon.png">
+                            </div>
+                        </div>
+                        <p style="text-align: center;">Lenguajes y Frameworks</p><br>
+                        <div class="inner-section">
+                            <div class="column" style="border-right: 2px solid red;font-size: 2.5vw;">
+                                Lenguajes<br>
+                                <div class="separador" style="width: 20%;padding: 3px 0px 8px 0px;"></div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.javascript.com/"><img class="lng-icon scrollFade" src="./assets/img/JavaScript-logo.png"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.java.com/"><img class="lng-icon scrollFade" src="./assets/img/Java-logo.png"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.python.org/"><img  class="lng-icon scrollFade" src="./assets/img/python-logo.png"></a>
+                                <img class="lng-icon scrollFade" src="./assets/img/html-logo.png">
+                                <img class="lng-icon scrollFade" src="./assets/img/css-logo.png">
+                            </div>
+                            <div class="column" style="font-size: 2.5vw;">
+                                Frameworks<br>
+                                <div style="width: 37%;padding: 3px 0px 8px 0px;border-top: 2px solid white;"></div>
+                                <a target="_blank" rel="noopener noreferrer" href="https://angular.io/"><img class="lng-icon scrollFade" src="./assets/img/angular-logo.png"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://wordpress.com/"><img class="lng-icon scrollFade" src="./assets/img/WordPress-logo.png"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.mysql.com/"><img class="lng-icon scrollFade" src="./assets/img/MySQL-logo.png"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.microsoft.com/es-es/sql-server/sql-server-2019"><img class="lng-icon scrollFade" src="./assets/img/sqlserver-logo.svg"></a>
+                                <a target="_blank" rel="noopener noreferrer" href="https://www.mongodb.com/"><img class="lng-icon scrollFade" src="./assets/img/mongodb-logo.png"></a>
+                            </div>
+                        </div>
+                        <button type="button" onclick="displayPage4()" class="blink next-btn">Siguiente</button>
+                    </div>
+                    <div class="section" id="section-5">
+                        <p style="text-align: center;">Servicios</p><br>
+                        <div class="inner-section scrollFade">
+                            <div class="column" style="border-right: 2px solid red;font-size: 2.5vw;">
+                                Diseño web<br>
+                                <div class="separador" style="width: 20%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/web-design-icon.jpg">
+                            </div>
+                            <div class="column" style="font-size: 2.5vw;">
+                                Bases de Datos<br>
+                                <div class="separador" style="width: 37%;padding: 3px 0px 8px 0px;"></div>
+                                <img class="service-icon" src="./assets/img/db-icon.png">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+
+    <script src="./assets/js/main.js"></script>
+    <script src="./assets/js/scrollfade-0.1.js"></script>
+</html>

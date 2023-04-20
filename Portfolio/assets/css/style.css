@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+body{
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'VT323';
+    width: 100vw;
+    height: 100vh;
+}
+body::-webkit-scrollbar{
+    display: none;
+}
+.container{
+   width: 100%;
+   height: 100%;
+}
+.gif-stage{
+    width: 100%;
+    height: 100vh;
+}
+.service-icon{
+    width: 50%;
+}
+.lng-icon{
+    width: 30%;
+    background-color: white;
+    margin: 10px;
+}
+.layer{
+    position: absolute;
+    width: 100%;
+}
+.info-layer{
+    height: 100vh;
+    z-index: 3;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    position: absolute;
+}
+.info-layer-container{
+    display: flex;
+    z-index: 3;
+    align-items: center;
+    position:relative;
+    flex-direction: column;
+    height: 65vh;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+.info-layer-container::-webkit-scrollbar{
+    display: none;
+}
+#start-btn{
+    font-family: 'Press Start 2P';
+    font-size: 8vw;
+    color: white;
+    background-color: transparent;
+    border: white;
+}
+.next-btn{
+    margin-top: 80px;
+    font-family: 'Press Start 2P';
+    font-size: 3vw;
+    color: white;
+    background-color: transparent;
+    border: white;
+}
+.blink {
+    animation: blink-animation 1s steps(5, start) infinite;
+}
+.blink-fast{
+    animation: blink-animation 0.4s steps(5, start) infinite;
+}
+#button_music{
+    background-color: #6a0dad;
+    border-radius: 50%;
+    position: absolute;
+    font-size: 50px;
+    right: 20px;
+    top: 20px;
+    min-width: 60px;
+    z-index: 100;
+}
+.section{
+    padding-top: 30px;
+    display: flex;
+    justify-items: center;
+    flex-direction: column;
+    width: 100vw;
+    color: white;
+    font-size: 3vw;
+}
+#section-2{
+    visibility: hidden;
+    height: 0%;
+}
+#section-3{
+    visibility: hidden;
+    height: 0%;
+}
+#section-4{
+    display: none;
+}
+#section-5{
+    display: none;
+}
+.inner-section{
+    display: flex;
+    flex-direction: row;
+}
+.column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+}
+#profile-image{
+    width: 50%;
+    border-radius: 50%;
+}
+#terry-animation{
+    position: absolute;
+    bottom: 15%;
+    right: 38%;
+    z-index: 2;
+}
+#geese-animation{
+    position: absolute;
+    left: 38%;
+    z-index: 2;
+}
+#ryo-animation{
+    display: none;
+    position: absolute;
+    left: 38%;
+    z-index: 2;
+}
+#kim-animation{
+    display: none;
+    position: absolute;
+    bottom: 15%;
+    right: 30%;
+}
+.kim-idle{
+    width: 60px;
+    height: 110px;
+    background: url('../img/kim-idle.png');
+    animation: kim-idle .6s steps(3) infinite alternate;
+    transform: scale(3);
+}
+.kim-hienzan{
+    width: 90px;
+    height: 110px;
+    background: url('../img/kim-hienzan.png');
+    animation: kim-hienzan 1s steps(8) forwards;
+    transform: scale(3);
+}
+.kim-victory{
+    width: 60px;
+    height: 110px;
+    background: url('../img/kim-victory.png');
+    animation: kim-victory .5s steps(2) forwards;
+    transform: scale(3);
+}
+.terry-idle{
+    height: 109px;
+    width: 60px;
+    transform: scale(3);
+    background: url('../img/terry-idle.png');
+    animation: terry-idle .4s steps(3) infinite alternate;
+}
+.terry-idle-flip{
+    width: 60px;
+    height: 110px;
+    background: url('../img/terry-idle-flip.png');
+    animation: terry-idle-flip .4s steps(3) infinite alternate;
+    transform: scale(3);
+}
+.geese-idle{
+    width: 50px;
+    bottom: 16%;
+    height: 112px;
+    transform: scale(3);
+    background: url('../img/geese-sheet-transparent.png');
+    animation: geese-idle 1.5s steps(4) infinite alternate;
+}
+.geese-knocked{
+    bottom: 16%;
+    width: 100px;
+    height: 112px;
+    transform: scale(3);
+    background: url('../img/geese-knocked.png');
+    animation: geese-knocked 2s steps(8) infinite;
+}
+.geese-pant{
+    width: 50px;
+    height: 60px;
+    bottom: 12%;
+    transform: scale(3);
+    background: url('../img/geese-pant.png');
+    animation: geese-pant 1.5s steps(2) infinite;
+}
+.terry-burn-knuckle{
+    width: 97px;
+    height: 109px;
+    background: url('../img/burn.png');
+    animation: burning-knuckle 1s steps(7) infinite;
+}
+.terry-rising-tackle{
+    width: 74px;
+    height: 110px;
+    background: url('../img/terry-rising-tackle.png');
+    animation: terry-rising-tackle 1.5s steps(9) normal forwards;
+    transform: scale(3);
+}
+.terry-taunt{
+    height: 109px;
+    width: 53px;
+    transform: scale(3);
+    background: url('../img/terry-taunt.png');
+    animation: terry-taunt 1s steps(7) forwards;
+}
+.terry-throw-hat{
+    width: 147px;
+    height: 135px;
+    transform: scale(2.5);
+    background: url('../img/terry-throw-hat.png');
+    animation: terry-throw-hat 1s steps(6) normal forwards;
+}
+.active{
+    display: block;
+}
+.inactive{
+    display: none !important;
+}
+#title{
+    margin-top: 50px;
+    font-size: 3vw;
+    color: white;
+    text-align: center;
+}
+.separador{
+    border-top: 2px solid white;
+    margin: auto;
+}
+.fa-chevron-down{
+    color: white;
+    margin-bottom: 20px;
+    animation: up-down-bounce 2s linear infinite alternate;
+}
+.about-me{
+    display: flex;
+    flex-direction: row;
+    color: white;
+}
+#video-opening{
+    position: absolute;
+    z-index: 3;
+    background-color: black;
+    height: 100%;
+    width: 100%;
+    transition: ease-in-out background-color .5s;
+}
+#gif-opening{
+    display: none;
+    max-height: 100%;
+    width: 100%;
+}
+#info-layer-id{
+    background-color: black;
+    transition: ease-in-out background-color .5s;
+}
+
+@keyframes up-down-bounce{
+    0%,100%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(20px);
+    }
+}
+
+@keyframes terry-idle{
+    from{background-position: 0px 0px;}
+    to{
+        background-position: -195px 0px;
+    }
+}
+
+@keyframes terry-idle-flip{
+    0%{background-position: -149% 0px;}
+    100%{background-position: 0px 0px;}
+}
+
+@keyframes terry-rising-tackle{
+    0%{background-position: -108% 0px;transform: scale(3) translateY(0px) translateX(0px);}
+    50%{transform: translateY(-350px) translateX(90px) scale(3);}
+    100%{background-position: 0px 0px;transform: translateY(0px) translateX(90px) scale(3)}
+}
+
+@keyframes terry-taunt{
+    0%{background-position: 0px 0px;}
+    100%{background-position: 100% 0px;}
+}
+
+@keyframes geese-idle{
+    from{background-position: -12px 6px;}
+    to{background-position: -241px 6px;}
+}
+
+@keyframes kim-idle {
+    from{background-position: 0px 0px;}
+    to{background-position: 149% 0px;}
+}
+
+@keyframes kim-hienzan{
+    0%{background-position: 0px 0px;transform: translateY(0px) scale(3);}
+    50%{transform: translateY(-175px) translateX(-90px) scale(3);}
+    100%{background-position: 114% 0px;transform: translateY(0px) translateX(-90px) scale(3);}
+}
+
+@keyframes kim-victory{
+    0%{background-position: 0px 0px;}
+    100%{background-position: 100% 0px;}
+}
+
+@keyframes burning-knuckle{
+    from{background-position: 0px 0px; transform: translateX(0px) scale(3);}
+    to{background-position: 116% 0px; transform: translateX(-19vw) scale(3);}
+}
+
+@keyframes terry-throw-hat{
+    from{background-position: 0px 0px;transform: scale(2.5);}
+    to{background-position: 100% 0px;transform: scale(2.5);}
+}
+
+@keyframes geese-knocked{
+    from{background-position: 0px 0px; transform: translateX(-30px) scale(3);}
+    to{background-position: 116% 0px; transform: translateX(-25vw) scale(3);}
+}
+
+@keyframes geese-pant{
+    from{background-position: -4px -5px;}
+    to{background-position: -117px -5px;}
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}
