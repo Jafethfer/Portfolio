@@ -6,6 +6,7 @@ var container = document.getElementById('main-container')
 var info_layer = document.getElementById('info-layer-id')
 var info_layer_container = document.getElementById('info-layer-container-id')
 var bg_music_src = document.getElementById('bg-music-src')
+var bg_layer = document.getElementById('background-layer')
 
 var buttonToSection3 = document.getElementById('buttonToPage3')
 var stagebg = document.getElementById('stage-background')
@@ -27,12 +28,14 @@ var section4 = document.getElementById('section-4')
 var audio = new Audio('./assets/sfx/Start-Sound.wav')
 var geese_knocked = new Audio('./assets/sfx/geese-knocked-voice.mp3')
 var burnknuckle = new Audio('./assets/sfx/Burning-Knuckle.mp3')
-var hit_burnknuckle = new Audio('./assets/sfx/burning-knuckle-hit.wav')
+var hit_burnknuckle = new Audio('./assets/sfx/burning-knuckle-hit.mp3')
 var terry_ok = new Audio('./assets/sfx/terry-ok.mp3')
 var kim_hienzan = new Audio('./assets/sfx/kim-hienzan.mp3')
 var terry_taunt = new Audio('./assets/sfx/terry-taunt.mp3')
 var kim_victory = new Audio('./assets/sfx/kim-victory.mp3')
 var terry_rising_tackle = new Audio('./assets/sfx/terry-rising-tackle.mp3')
+var floor_hit = new Audio('./assets/sfx/floor-hit.mp3')
+var floor_hit_2 = new Audio('./assets/sfx/floor-hit.mp3')
 
 //Play and stop music function
 function play_stop(){
@@ -82,17 +85,31 @@ function startPortfolio(){
     setTimeout(()=>{
         geese.classList.remove('geese-idle')
         geese.classList.add('geese-knocked')
+        
     },7400)
     setTimeout(()=>{
         terry.classList.remove('terry-burn-knuckle')
         terry.classList.add('terry-idle')
         terry.style.right='55%'
+        bg_layer.classList.add('shake-screen')
     },7900)
+    setTimeout(()=>{
+        floor_hit.volume=0.6
+        floor_hit.play()
+    },8000)
+    setTimeout(()=>{
+        floor_hit_2.volume=0.6
+        floor_hit_2.play()
+    },8500)
+    setTimeout(()=>{
+        bg_layer.classList.remove('shake-screen')
+    },8700)
     setTimeout(()=>{
         geese.classList.remove('geese-knocked')
         geese.classList.add('geese-pant')
         geese.style.left='15%'
         info_layer_container.style.overflowY='scroll'
+        info_layer_container.style.height='65%'
         section2.style.visibility='visible'
         section3.style.visibility='visible'
         section2.style.height='auto'
@@ -140,6 +157,8 @@ function displayPage3(){
     },4000)
     setTimeout(()=>{
         terry.classList.remove('terry-idle-flip')
+        terry.style.left='36%'
+        terry.style.bottom='17%'
         terry.classList.add('terry-taunt')
         terry_taunt.play()
     },5000)
@@ -147,6 +166,7 @@ function displayPage3(){
         kim.classList.remove('kim-idle')
         kim.classList.add('kim-hienzan')
         terry.classList.remove('terry-taunt')
+        terry.style.left='30%'
         terry.classList.add('terry-idle-flip')
         kim_hienzan.play()
     },6000)
