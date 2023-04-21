@@ -137,22 +137,28 @@ function displayPage3() {
         section3.style.opacity = '0'
         info_layer.style.backgroundColor = 'black'
     }, 3000)
-    setTimeout(() => {
+    setTimeout(async () => {
         geese.style.display = 'none'
-        bg_music_src.src = './assets/sfx/kim-stage.mp3'
-        x.load()
-        x.volume = 0.5
-        if (onicon.classList.contains('active')) {
-            x.muted = false
 
-            x.play()
-        }
         terry.classList.remove('terry-throw-hat')
         terry.classList.add('terry-idle-flip')
         terry.removeAttribute('style')
         terry.style.left = '30%'
         kim.style.display = 'block'
-        stagebg.src = './assets/img/kim-stage.webp'
+        await new Promise((resolve, reject) => {
+            stagebg.onload = () => {
+                bg_music_src.src = './assets/sfx/kim-stage.mp3'
+                x.load()
+                x.volume = 0.5
+                if (onicon.classList.contains('active')) {
+                    x.muted = false
+
+                    x.play()
+                }
+                resolve(true)
+            }
+            stagebg.src = './assets/img/kim-stage.webp'
+        })
         info_layer.style.backgroundColor = 'transparent'
     }, 4000)
     setTimeout(() => {
