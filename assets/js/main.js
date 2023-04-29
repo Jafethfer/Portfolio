@@ -38,7 +38,7 @@ function loadImages(names, files, onAllLoaded) {
     const images = {};
     while (i < names.length) {
         const img = images[names[i]] = new Image;
-        img.src = "../img/" + files[i++] + ".png";
+        img.src = "./assets/img/" + files[i++] + ".png";
         img.onload = onload;
     }
     return images;
