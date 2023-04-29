@@ -24,6 +24,31 @@ var section2 = document.getElementById('section-2')
 var section3 = document.getElementById('section-3')
 var section4 = document.getElementById('section-4')
 
+var imgLoaded = false;
+
+const imageCollection = loadImages(
+    ["menuImage", "resetScoreButton", "instructionsButton", "playButton", "dialogPanel", "gamePlayImage", "exitButton", "timerPanel", "messengerPanel", "scoreBar"],
+    ["burn", "burning-knuckle", "geese-knocked", "geese-pant", "kim-hienzan", "kim-idle", "kim-victory", "terry-idle", "terry-idle-flip", "terry-throw-hat"],
+    ableToPlay  // this is called when all images have loaded.
+);
+
+function loadImages(names, files, onAllLoaded) {
+    var i = 0, numLoading = names.length;
+    const onload = () => --numLoading === 0 && onAllLoaded();
+    const images = {};
+    while (i < names.length) {
+        const img = images[names[i]] = new Image;
+        img.src = files[i++] + ".png";
+        img.onload = onload;
+    }
+    return images;
+}
+
+function ableToPlay() {
+    imgLoaded = true;
+    console.log("Images Loaded")
+}
+
 //SFX Instances
 var audio = new Audio('./assets/sfx/Start-Sound.wav')
 var geese_knocked = new Audio('./assets/sfx/geese-knocked-voice.mp3')
@@ -56,6 +81,7 @@ function play_stop() {
 
 //Start Portfolio function
 function startPortfolio() {
+    if (!imgLoaded) return;
     x.volume = 0.40
     x.play()
     section1.style.display = 'none'
