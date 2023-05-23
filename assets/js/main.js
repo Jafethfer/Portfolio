@@ -23,6 +23,7 @@ var section1 = document.getElementById('title')
 var section2 = document.getElementById('section-2')
 var section3 = document.getElementById('section-3')
 var section4 = document.getElementById('section-4')
+var section5 = document.getElementById('section-5')
 
 var imgLoaded = false;
 
@@ -151,7 +152,6 @@ function displayPage3() {
         terry_ok.play()
         var fadeout = setInterval(() => {
             x.volume -= 0.05
-            console.log(x.volume)
             if (x.volume < 0.15) {
                 x.muted = true
                 clearInterval(fadeout)
@@ -228,7 +228,6 @@ function displayPage4() {
         kim_victory.play()
         var fadeout = setInterval(() => {
             x.volume -= 0.05
-            console.log(x.volume)
             if (x.volume < 0.15) {
                 x.muted = true
                 clearInterval(fadeout)
@@ -254,5 +253,8 @@ function displayPage4() {
             stagebg.src = './assets/img/ryo-stage.gif'
         })
         info_layer.style.backgroundColor = 'transparent'
+        info_layer_container.scrollTo(0, 0)
+        section4.style.display = 'none'
+        section5.style.display = 'flex'
     }, 4000)
 }
